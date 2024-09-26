@@ -8,10 +8,10 @@ const DatePreview = () => {
   const recurringDates = RecurrenceDates();
 
   return (
-    <div className="mt-4 flex justify-between">
+    <div className="mt-4">
       <h2 className="text-lg font-semibold">Date Preview</h2>
       {startDate && endDate ? (
-        <div className="">
+        <div>
           <p>Start Date: {startDate.toLocaleDateString()}</p>
           <p>End Date: {endDate.toLocaleDateString()}</p>
           {/* <p>Recurrence Pattern: {recurrencePattern}</p> */}

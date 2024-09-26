@@ -46,7 +46,7 @@ const MiniCalendar = ({ dates, startDate }) => {
   };
 
   return (
-    <div className=''>
+    <div>
       <div className="flex justify-between items-center mb-2">
         <button onClick={handlePrevMonth} className="text-gray-600">&lt;</button>
         <span>{currentMonth.toLocaleString('default', { month: 'long' })} {year}</span>
