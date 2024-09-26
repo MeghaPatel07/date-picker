@@ -25,3 +25,21 @@ body {
     text-wrap: balance;
   }
 }
+
+
+.mini-bg {
+  background: #f4f3f369;
+  padding: 20px;
+  border-radius: 33px;
+}
+
+.days-bg {
+  background-color: #e6e7e899;
+}
+
+.btn-hover:hover {
+
+  padding: 0px;
+  /* font-size: 20px; */
+  background: #d2d8e0e6;
+}

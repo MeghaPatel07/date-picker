@@ -46,26 +46,27 @@ const MiniCalendar = ({ dates, startDate }) => {
   };
 
   return (
-    <div>
+    <div className='mt-3 mini-bg'>
       <div className="flex justify-between items-center mb-2">
         <button onClick={handlePrevMonth} className="text-gray-600">&lt;</button>
-        <span>{currentMonth.toLocaleString('default', { month: 'long' })} {year}</span>
+        <span className=' font-bold md:text-2xl sm:text-xl'>{currentMonth.toLocaleString('default', { month: 'long' })} {year}</span>
         <button onClick={handleNextMonth} className="text-gray-600">&gt;</button>
       </div>
 
       <div className="grid grid-cols-7 gap-2">
         {daysOfWeek.map((day, index) => (
-          <div key={index} className="text-center font-bold">{day}</div>
+          <div key={index} className="text-xs md:text-md lg:text-base text-center font-bold">{day}</div>
         ))}
         {calendarDays.map((day, index) => (
-          <div
+          <button 
+          type='diabled' 
             key={index}
-            className={`p-2 rounded-md text-center ${
-              isRecurringDate(day) ? 'bg-blue-200' : 'bg-gray-100'
+            className={`md:text-md text-xs  lg:text-sm  md:p-2 p-1 rounded-md text-center btn-hover ${
+              isRecurringDate(day) ? 'bg-blue-200' : 'days-bg'
             }`}
           >
             {day || ''}
-          </div>
+          </button>
         ))}
       </div>
     </div>
