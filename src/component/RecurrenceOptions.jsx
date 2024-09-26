@@ -10,21 +10,25 @@ const RecurrenceOptions = () => {
   } = useDatePicker();
 
   return (
-    <div className="mb-4">
-      <h2 className="text-lg font-semibold mb-100">Recurrence Options</h2>
+    
+    <div className="">
+      <h2 className="text-lg  font-semibold my-5">Recurrence Options:</h2>
+<div className="flex space-x-20 justify-between">
+<div className=''>
+ <label className="block mb-1 py-1">Recurring Pattern:</label>
       <select
         value={recurrencePattern}
         onChange={(e) => setRecurrencePattern(e.target.value)}
-        className="p-2 border rounded-md mb-2"
+        className="py-3 px-5 border rounded-md mb-2"
       >
         <option value="daily">Daily</option>
         <option value="weekly">Weekly</option>
         <option value="monthly">Monthly</option>
         <option value="yearly">Yearly</option>
       </select>
-
+</div>
       <div>
-        <label className="block mb-1">Every X:</label>
+        <label className="block mb-1 py-1">Frequecy:</label>
         <input
           type="number"
           value={recurrenceDetails.interval}
@@ -34,10 +38,12 @@ const RecurrenceOptions = () => {
               interval: e.target.value,
             })
           }
-          className="p-2 border rounded-md mb-2"
+          className="py-3 px-5 border rounded-md mb-2"
         />
-        <label className="block mb-1">Specific Days of Week:</label>
-        <div className="flex space-x-2">
+           </div>
+           </div>
+        <label className="block font-semibold mb-3 mt-2">Specific Days of Week:</label>
+        <div className="flex space-x-3">
           {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat','Sun'].map((day,index) => (
             <label key={day}>
               <input
@@ -56,7 +62,8 @@ const RecurrenceOptions = () => {
             </label>
           ))}
         </div>
-      </div>
+   
+
     </div>
   );
 };
